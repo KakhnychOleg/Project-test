@@ -1,0 +1,145 @@
+.powerfull {
+   padding: 145px 0 105px 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   @media screen and (max-width: $breakpoint930){
+      flex-wrap: wrap;
+   }
+
+   @media screen and (max-width: $breakpoint768){
+      padding: 50px 0;
+   }
+
+   // .powerfull__container
+   &__container {
+      max-width: 539px;
+   }
+
+   // .powerfull__title
+   &__title {
+      margin-bottom: 16px;
+   }
+
+   // .powerfull__content
+   &__content {
+      font-family: 'Roboto';
+      font-size: 16px;
+      line-height: 26px;
+      color: #6F7CB2;
+
+      margin-bottom: 10px;
+   }
+
+   // .powerfull__element
+   &__element {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+   
+   // .powerfull__item
+   &__item {
+      width: 255px;
+   }
+}
+
+.powerfull-two {
+   margin-top: 110px;
+   padding: 140px 0 95px 0;
+   display: flex;
+   align-items: center;
+   justify-content: end;
+   position: relative;
+
+   @media screen and (max-width: 1150px){
+      margin-top: 10px;
+      padding: 50px 0 ;
+      justify-content: center;
+
+      &__bg img {
+         display: none;
+      }
+   
+      &__container {
+         width: 100%;
+      }
+   
+      &__item {
+         width: 285px;
+      }
+   }
+
+   @media screen and (max-width: $breakpoint768){
+      padding: 50px 0;
+   }
+
+   &__bg img {
+      height: 820px;
+      position: absolute;
+      left: -165px;
+      top: 0;
+   }
+
+   &__container {
+      max-width: 632px;
+      margin-right: 10px;
+   }
+
+   &__item {
+      width: 285px;
+   }
+
+   &__element {
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+}
+.item {
+   margin-bottom: 43px;
+   // .item__logo
+   &__logo img {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 14px;
+   }
+
+   // .item__title
+   &__title {
+      font-family: 'Roboto-Medium';
+      font-size: 16px;
+      line-height: 26px;
+      color: $primery;
+      margin-bottom: 6px;
+   }
+
+   // .item__text
+   &__text {
+      font-family: 'Roboto';
+      font-size: 12px;
+      line-height: 18px;
+      color: $item-color;
+   }
+}
+
+
+
+.images-bg {
+   margin-right: 10px;
+   width: 535px;
+   height: 525px;
+
+   @media screen and (max-width: 1150px){
+      width: 440px;
+      height: 425px;
+   }
+
+   @media screen and (max-width: $breakpoint930){
+      width: 340px;
+      height: 325px;
+   }
+}

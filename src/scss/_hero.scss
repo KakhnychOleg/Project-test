@@ -1,0 +1,130 @@
+.hero {
+   padding-top: 194px;
+   padding-bottom: 368px;
+   position: relative;
+
+   // .hero__container
+   &__container {
+      position: relative;
+      max-width: 539px;
+      z-index: 999;
+   }
+
+   // .hero__title
+   &__title {
+      font-family: 'Roboto-Medium';
+      font-size: 50px;
+      line-height: 66px;
+      letter-spacing: 1px;
+      color: $secondary;
+      margin-bottom: 20px;            
+   }
+
+   // .hero__content
+   &__content {
+      font-family: 'Roboto';
+      font-size: 18px;
+      line-height: 30px;
+      color: $primery;
+
+      margin-bottom: 10px;
+   }
+
+   // .hero__btn
+   &__btn {
+      margin-top: 70px;
+      display: flex;
+      gap: 30px;
+
+      &--ui {
+         width: 189px;
+         background: #111B47;
+         border-radius: 2px;
+         text-align: center;
+         padding: 6px 0 2px 0;
+         transition: all .5s ease;
+
+         &:hover {
+            background: #253994;
+         }
+         
+         .ui-link {
+            font-family: 'Roboto-Medium';
+            font-size: 16px;
+            line-height: 26px;
+            color: #fff;
+         }
+      }
+
+      &--more {
+         width: 185px;
+         border: 2px solid #091133;
+         border-radius: 2px;
+         text-align: center;
+         padding: 4px 0;
+         transition: all .5s ease;
+         
+         &:hover {
+            background: #4062f8;
+            border: 2px solid #4062f8;
+         }
+
+         .more-link {
+            font-family: 'Roboto-Medium';
+            font-size: 16px;
+            line-height: 26px;
+            color: $secondary;
+         }
+      }
+   }
+
+   // .hero__bg
+   &__bg {
+      .backgraund-1 {
+         height: 1161px;
+         position: absolute;
+         right: 0;
+         bottom: -10px;
+         z-index: -1;
+      }
+      
+      @media screen and (max-width: $breakpoint1200){
+         .backgraund-1 {
+            height: 1001px;
+         }
+      }
+      @media screen and (max-width: $breakpoint930){
+         .backgraund-1 {
+            height: 601px;
+         }
+      }
+   }
+
+   // .hero__img
+   &__img {
+      .backgraund-2 {
+         height: 780px;
+         position: absolute;
+         right: 0;
+         bottom: 70px;
+         z-index: -1;
+      }
+
+      @media screen and (max-width: $breakpoint1200){
+         .backgraund-2 {
+            height: 500px;
+         }
+      }
+
+      @media screen and (max-width: $breakpoint930){
+         .backgraund-2 {
+            display: none;
+         }
+      }
+   }
+
+   @media screen and (max-width: $breakpoint930){
+      padding-top: 100px;
+      padding-bottom: 128px;
+   }
+}

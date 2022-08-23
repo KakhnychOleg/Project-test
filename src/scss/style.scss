@@ -1,0 +1,30 @@
+// Default
+@import "reset";
+@import "var";
+
+// Font
+@import "fonts";
+
+//Block
+@import "header";
+@import "hero";
+@import "powerfull";
+
+@import "footer";
+
+
+.container {
+   max-width: $containerWidth;
+   margin: 0 auto;
+   padding: 0 20px;
+   
+   font-family: 'Roboto';
+}
+
+.title {
+   font-family: 'Roboto-Medium';
+   font-size: 36px;
+   line-height: 48px;
+   color: $secondary;
+}
+
