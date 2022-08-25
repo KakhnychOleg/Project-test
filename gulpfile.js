@@ -16,12 +16,8 @@ const webpackStream = require('webpack-stream');
 const browserSync = require('browser-sync').create();
 
 function html() {
-   return src(['./src/**/*.html'])
-      .pipe(fileinclude({
-         prefix: '@',
-         basepath: '@file'
-      }))
-      .pipe(dest('./dist'))
+   return src(['./src/index.html'])
+      .pipe(dest('./'))
       .pipe(browserSync.stream());
 }
 
@@ -41,13 +37,13 @@ function scss() {
          level: 2
       }))
       .pipe(sourcemaps.write('.'))
-      .pipe(dest('./dist/css/'))
+      .pipe(dest('./assets/css/'))
       .pipe(browserSync.stream());
 }
 
 function image() {
    return src(['./src/img/*.jpg', './src/img/*.png', './src/img/*.jpeg'])
-      .pipe(dest('./dist/img'))
+      .pipe(dest('./assets/img'))
 }
 
 function svgSprites() {
@@ -59,7 +55,7 @@ function svgSprites() {
             }
          }
       }))
-      .pipe(dest('./dist/img'))
+      .pipe(dest('./assets/img'))
 }
 
 function scripts() {
@@ -88,27 +84,27 @@ function scripts() {
       .pipe(sourcemaps.init())
       .pipe(uglify().on("error", notify.onError()))
       .pipe(sourcemaps.write('.'))
-      .pipe(dest('./dist/js'))
+      .pipe(dest('./assets/js'))
       .pipe(browserSync.stream());
 }
 
 function clean() {
-   return del('./dist/*')
+   return del('./assets/*')
 }
 
 function fonts() {
    src('./src/fonts/**.ttf')
       .pipe(ttf2woff())
-      .pipe(dest('./dist/fonts/'))
+      .pipe(dest('./assets/fonts/'))
    return src('./src/fonts/**.ttf')
       .pipe(ttf2woff2())
-      .pipe(dest('./dist/fonts/'))
+      .pipe(dest('./assets/fonts/'))
 }
 
 function watcher() {
    browserSync.init({
       server: {
-         baseDir: "./dist"
+         baseDir: "./"
       }
    });
 
@@ -144,7 +140,7 @@ function scssBuild() {
       .pipe(cleanCSS({
          level: 2
       }))
-      .pipe(dest('./dist/css/'))
+      .pipe(dest('./assets/css/'))
 }
 
 function scriptsBuild() {
@@ -171,7 +167,7 @@ function scriptsBuild() {
           }
       }))
       .pipe(uglify().on("error", notify.onError()))
-      .pipe(dest('./dist/js'))
+      .pipe(dest('./assets/js'))
 }
 
 
